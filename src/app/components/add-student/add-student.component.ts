@@ -27,14 +27,14 @@ export class AddStudentComponent {
 
     this.studentService.addStudent(this.newStudent).subscribe({
       next: (response) => {
-        this.studentAdded.emit(response.student);  // Emite el estudiante recién agregado
-        alert('Estudiante agregado exitosamente');
-        form.reset();  // Resetea el formulario
+        this.studentAdded.emit(response.student);
+        alert('Student added correctly');
+        form.reset(); 
         location.reload();
       },
       error: (error) => {
-        console.error('Error al agregar estudiante', error);
-        alert('Error al agregar estudiante');
+        console.error('Error adding student', error);
+        alert('Error adding student');
       }
     });
   }

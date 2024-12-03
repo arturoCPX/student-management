@@ -31,6 +31,6 @@ export class StudentListComponent implements OnInit {
   }
 
   onStudentAdded(newStudent: any): void {
-    this.students.push(newStudent); // Agrega el estudiante recién agregado a la lista
+    this.students.push(newStudent); 
   }
 }
