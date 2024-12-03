@@ -1,0 +1,57 @@
+<div class="container mt-4">
+    <h3>Add Student</h3>
+    <form #studentForm="ngForm" (ngSubmit)="addStudent(studentForm)">
+      <div class="mb-3">
+        <label for="name" class="form-label">Name</label>
+        <input
+          type="text"
+          id="name"
+          class="form-control"
+          [(ngModel)]="newStudent.name"
+          name="name"
+          required
+        />
+      </div>
+      <div class="mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input
+          type="email"
+          id="email"
+          class="form-control"
+          [(ngModel)]="newStudent.email"
+          name="email"
+          required
+          email
+        />
+      </div>
+      <div class="mb-3">
+        <label for="phone" class="form-label">Phone</label>
+        <input
+          type="text"
+          id="phone"
+          class="form-control"
+          [(ngModel)]="newStudent.phone"
+          name="phone"
+          required
+          pattern="^\d{10}$"
+          title="El teléfono debe tener 10 dígitos"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="language" class="form-label">Language</label>
+        <select
+          id="language"
+          class="form-control"
+          [(ngModel)]="newStudent.language"
+          name="language"
+          required
+        >
+          <option value="English">English</option>
+          <option value="Spanish">Spanish</option>
+          <option value="French">French</option>
+        </select>
+      </div>
+      <button type="submit" class="btn btn-primary" [disabled]="studentForm.invalid">Add Student</button>
+    </form>
+</div>
+  

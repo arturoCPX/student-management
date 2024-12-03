@@ -1,52 +1,23 @@
 <div class="container mt-4">
-    <!-- Tabla de estudiantes -->
-    <table class="table table-bordered table-striped mt-3">
-      <thead>
-        <tr>
-          <th>ID</th>
-          <th>Name</th>
-          <th>Email</th>
-          <th>Phone</th>
-          <th>Language</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let student of students">
-          <td>{{ student.id }}</td>
-          <td>{{ student.name }}</td>
-          <td>{{ student.email }}</td>
-          <td>{{ student.phone }}</td>
-          <td>{{ student.language }}</td>
-        </tr>
-      </tbody>
-    </table>
-  
-    <!-- Formulario para agregar estudiantes -->
-    <div class="mt-4">
-      <h4>Add New Student</h4>
-      <form (ngSubmit)="addStudent()" #studentForm="ngForm">
-        <div class="form-group">
-          <label for="name">Name</label>
-          <input type="text" id="name" class="form-control" [(ngModel)]="newStudent.name" name="name" required />
-        </div>
-        <div class="form-group">
-          <label for="email">Email</label>
-          <input type="email" id="email" class="form-control" [(ngModel)]="newStudent.email" name="email" required />
-        </div>
-        <div class="form-group">
-          <label for="phone">Phone</label>
-          <input type="text" id="phone" class="form-control" [(ngModel)]="newStudent.phone" name="phone" required pattern="^\d{10}$" />
-        </div>
-        <div class="form-group">
-          <label for="language">Language</label>
-          <select id="language" class="form-control" [(ngModel)]="newStudent.language" name="language" required>
-            <option value="English">English</option>
-            <option value="Spanish">Spanish</option>
-            <option value="French">French</option>
-          </select>
-        </div>
-        <button type="submit" class="btn btn-primary" [disabled]="!studentForm.form.valid">Add Student</button>
-      </form>
-    </div>
+
+  <table class="table table-bordered table-striped mt-3">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>Language</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let student of students">
+        <td>{{ student.id }}</td>
+        <td>{{ student.name }}</td>
+        <td>{{ student.email }}</td>
+        <td>{{ student.phone }}</td>
+        <td>{{ student.language }}</td>
+      </tr>
+    </tbody>
+  </table>
 </div>
-  

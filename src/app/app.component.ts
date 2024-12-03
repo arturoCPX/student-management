@@ -4,10 +4,11 @@ import { StudentListComponent } from './components/student-list/student-list.com
 import { NavComponent } from './components/nav/nav.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { FormsModule } from '@angular/forms';
+import { AddStudentComponent } from './components/add-student/add-student.component';
 
 @Component({
   selector: 'app-root',
-  imports: [StudentListComponent, NavComponent, FooterComponent],
+  imports: [StudentListComponent, NavComponent, FooterComponent, AddStudentComponent],
   standalone:true,
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
