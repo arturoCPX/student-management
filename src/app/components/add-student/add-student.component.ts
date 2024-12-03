@@ -9,6 +9,7 @@ import { FormsModule, NgForm } from '@angular/forms';
   styleUrl: './add-student.component.css'
 })
 export class AddStudentComponent {
+  //Objeto para el nuevo estudiante
   newStudent = {
     name: '',
     email: '',
@@ -16,18 +17,23 @@ export class AddStudentComponent {
     language: 'English'
   };
 
-  @Output() studentAdded = new EventEmitter<any>();  // Emite el evento cuando se agrega un estudiante
+  //Decorador Output
+  @Output() studentAdded = new EventEmitter<any>(); 
 
+  //Permite usar los metodos del servicio
   constructor(private studentService: StudentService) {}
 
+  //
   addStudent(form: NgForm) {
+    //Validar si los campos estan invalidos
     if (form.invalid) {
       return;
     }
 
+    //Si esta conrectos, se llama al servicio y al metodo agregar, mandandole el objeto
     this.studentService.addStudent(this.newStudent).subscribe({
-      next: (response) => {
-        this.studentAdded.emit(response.student);
+      next: (response) => {//Se ejecuta si la api reponde bien
+        this.studentAdded.emit(response.student);//Emite el vento studentAdded con los datos del estudiante
         alert('Student added correctly');
         form.reset(); 
         location.reload();
