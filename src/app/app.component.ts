@@ -3,6 +3,7 @@ import { RouterOutlet } from '@angular/router';
 import { StudentListComponent } from './components/student-list/student-list.component';
 import { NavComponent } from './components/nav/nav.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
